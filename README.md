@@ -1,8 +1,8 @@
 ### Hi there 👋
 
 ## Thanks To
-[`Dave`](https://github.com/noizydev)
+* [`Dave`](https://github.com/noizydev)
 [`JarXr`](https://github.com/kuhakuuxr)
-[`Manxtodd`](https://github.com/manxtodd)
+* [`Manxtodd`](https://github.com/manxtodd)
 [`Aqul`](https://github.com/zennn08)
-[`Rein Fernhout`](https://reinfernhout.xyz)
+* [`Rein Fernhout`](https://reinfernhout.xyz)
