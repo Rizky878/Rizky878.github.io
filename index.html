@@ -679,49 +679,6 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
   <div style="color: rgb(255, 255, 255); position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center; vertical-align: baseline; left: 136px; top: -642px;">
    •
   </div>
-<div class="wrapper">
-      <div class="card">
-        <div class="circle">
-          <div class="bar"></div>
-          <div class="box"><span></span></div>
-        </div>
-        <div class="text">HTML & CSS</div>
-      </div>
-      <div class="card js">
-        <div class="circle">
-          <div class="bar"></div>
-          <div class="box"><span></span></div>
-        </div>
-        <div class="text">JavaScript</div>
-      </div>
-      <div class="card react">
-        <div class="circle">
-          <div class="bar"></div>
-          <div class="box"><span></span></div>
-        </div>
-        <div class="text">React JS</div>
-      </div>
-    </div>
-
-    <script>
-      let options = {
-        startAngle: -1.55,
-        size: 150,
-        value: 0.85,
-        fill: {gradient: ['#a445b2', '#fa4299']}
-      }
-      $(".circle .bar").circleProgress(options).on('circle-animation-progress',
-      function(event, progress, stepValue){
-        $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
-      });
-      $(".js .bar").circleProgress({
-        value: 0.70
-      });
-      $(".react .bar").circleProgress({
-        value: 0.60
-      });
-    </script>
-
  </body>
  <script type="text/javascript">
 	$.getJSON("https://api.countapi.xyz/hit/rizky878.github.io/", function(data) {
