@@ -110,7 +110,7 @@ section{
     font-weight: 600;
     line-height: 1.25;
     display: block;
-    font-family: var(--font);
+    font-family: 'Karla', sans-serif;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -126,7 +126,7 @@ section{
     display: block;
     background-color: #39e09b;
     color: white;
-    font-family: var(--font);
+    font-family: 'Karla', sans-serif;
     text-align: center;
     margin-bottom: 20px;
     padding: 17px;
