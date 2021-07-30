@@ -96,3 +96,17 @@ section{
   background-size: cover;
   height: calc(100vh - 80px);
 }
+.content{
+  height: 400px;
+  width: 750px;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+}
+.content .images{
+  height: 100%;
+  width: 100%;
+}
+.images img{
+  height: 100%;
+  width: 100%;
+}
