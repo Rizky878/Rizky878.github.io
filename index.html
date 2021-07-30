@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="st.css">
-<link rel="stylesheet" href="sy.css">
   some/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head> 
@@ -244,49 +243,7 @@ this.finishedCallback();
 }
 </script>
       
-  <button class="view-modal">Share</button>
-  <div class="popup">
-    <header>
-      <span>Share Link</span>
-      <div class="close"><i class="uil uil-times"></i></div>
-    </header>
-    <div class="content">
-      <p>Share this link via</p>
-      <p>copy link</p>
-      <div class="field">
-        <i class="url-icon uil uil-link"></i>
-        <input type="text" readonly value="https://rizky878.github.io"><button>Copy</button>
-      </div>
-    </div>
-  </div>
-  <script>
-    const viewBtn = document.querySelector(".view-modal"),
-    popup = document.querySelector(".popup"),
-    close = popup.querySelector(".close"),
-    field = popup.querySelector(".field"),
-    input = field.querySelector("input"),
-    copy = field.querySelector("button");
-
-    viewBtn.onclick = ()=>{
-      popup.classList.toggle("show");
-    }
-    close.onclick = ()=>{
-      viewBtn.click();
-    }
-
-    copy.onclick = ()=>{
-      input.select(); //select input value
-      if(document.execCommand("copy")){ //if the selected text copy
-        field.classList.add("active");
-        copy.innerText = "Copied";
-        setTimeout(()=>{
-          window.getSelection().removeAllRanges(); //remove selection from document
-          field.classList.remove("active");
-          copy.innerText = "Copy";
-        }, 3000);
-      }
-    }
-  </script>
+  
     <center>
      <p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px green;" color="white">ANU TEAM </font> _</p>
      <center><font face="courier new" size="2" font style="text-shadow: 0px 0px 30px red;" color="white">Jika Tuhan Berada Dipihakmu<br></font>
