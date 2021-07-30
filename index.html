@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="st.css">
-<link rel="stylesheet" href="sy.css">
   some/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head> 
@@ -339,49 +338,7 @@ this.finishedCallback();
                     </a>
                 </div>
      
-      <div class="content">
-         <div class="images">
-            <img src="https://telegra.ph/file/6fb887073c4a6f693105b.jpg">
-            <img src="https://telegra.ph/file/5afaba572bfee361d0293.jpg">
-            <img src="https://telegra.ph/file/9ce583a5ed1aa6a783ecb.jpg">
-            <img src="https://telegra.ph/file/0c7949080c3168b2036ee.jpg">
-            <img src="https://telegra.ph/file/6fb887073c4a6f693105b.jpg">
-         </div>
-         <div class="btm-slides">
-            <span onclick="btm_slide(1)"></span>
-            <span onclick="btm_slide(2)"></span>
-            <span onclick="btm_slide(3)"></span>
-            <span onclick="btm_slide(4)"></span>
-            <span onclick="btm_slide(5)"></span>
-         </div>
-         <div class="sliders left" onclick="side_slide(-1)">
-            <span class="fas fa-angle-left"></span>
-         </div>
-         <div class="sliders right" onclick="side_slide(1)">
-            <span class="fas fa-angle-right"></span>
-         </div>
-      </div>
-      <script>
-         var indexValue = 1;
-         showImg(indexValue);
-         function btm_slide(e){showImg(indexValue = e);}
-         function side_slide(e){showImg(indexValue += e);}
-         function showImg(e){
-           var i;
-           const img = document.querySelectorAll('img');
-           const slider = document.querySelectorAll('.btm-slides span');
-           if(e > img.length){indexValue = 1}
-           if(e < 1){indexValue = img.length}
-           for(i = 0; i < img.length; i++){
-             img[i].style.display = "none";
-           }
-           for(i = 0; i < slider.length; i++){
-             slider[i].style.background = "rgba(255,255,255,0.1)";
-           }
-           img[indexValue-1].style.display = "block";
-           slider[indexValue-1].style.background = "white";
-         }
-      </script>
+      
 </script><br> <script language="JavaScript">
 
 var message="Please Don't!";
