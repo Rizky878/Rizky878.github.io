@@ -1,4 +1,4 @@
-### Hi there 👋
+### ngapa bang? owh mau copy ok
 
 ## Thanks To
 * [`Dave`](https://github.com/noizydev)
