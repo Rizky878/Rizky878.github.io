@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>JavaScript Snake game || Rizky Fadilah</title>    
-<style>
-    canvas {background: black}
-</style>
 
-<script src="snake.js"></script>
+<head>
+  <title>mySnake</title>
+  <link rel="stylesheet" href="mySnake.css">
 </head>
-    
-<body onload="init();">
-    <canvas id="myCanvas" width="300" height="300">
-    </canvas>
+
+<body>
+  <div class="gameArea">
+    <canvas id="canvas" width="623" height="623"></canvas>
+  </div>
+
+  <div class='infoDashboard'>
+    <div class="textArea">
+      <div class="line-first">Click here to start a new game</div>
+      <div class="line-second"></div>
+      <div class="line-third"></div>
+    </div>
+  </div>
+
+  <div class="additionalOptions">
+    <div class="score">SCORE: 0</div>
+    <div class="current-speed">Current speed: <a class="your-speed">normal</a></div>
+
+    <!-- choose speed -->
+    <div class="dropdown">
+      <a class="dropbtn">Change the speed</a>
+      <div class="dropdown-content">
+        <a href="#">Normal</a>
+        <a href="#">Fast</a>
+        <a href="#">Increasing</a>
+      </div>
+    </div>
+
+    <div class="goThroughWalls">
+      <label class="check" for="walls">Go through walls</label>
+      <input type="checkbox" id="walls">
+    </div>
+  </div>
+  </div>
+
+  <script src="mySnake.js"></script>
 </body>
+
 </html>
