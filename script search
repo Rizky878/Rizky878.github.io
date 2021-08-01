@@ -1,0 +1,14 @@
+<p id="info"><font face="bold" size="6" font="" style="text-shadow: 0px 0px 30px green;" color="white">ANU TEAM </font> _</p>
+     <center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">Jika Tuhan Berada Dipihakmu<br></font>
+<center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">Percayalah Tak Ada Orang Yang Bisa Menjatuhkanmu<br></font>
+<center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">~ Rizky Fadilah</font>
+<div class="wrapper">
+      <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Ketik untuk mencari..">
+        <div class="autocom-box">
+          <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+      </div>
+    </div>
