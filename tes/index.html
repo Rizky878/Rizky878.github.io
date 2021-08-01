@@ -14,7 +14,144 @@
   some/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head> 
+ <body> 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+}
+.clock{
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  padding: 0 30px;
+}
+.clock .display{
+  font-size: 60px;
+  color: cyan;
+  letter-spacing: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -22,66 +159,88 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.wrapper{
-  display: flex;
-}
-.wrapper .static-txt{
+::selection{
   color: #fff;
-  font-size: 60px;
-  font-weight: 400;
+  background: #664AFF;
 }
-.wrapper .dynamic-txts{
-  margin-left: 15px;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
+
+.wrapper{
+  max-width: 450px;
+  margin: 150px auto;
 }
-.dynamic-txts li{
-  list-style: none;
-  color: #00FF0E;
-  font-size: 60px;
-  font-weight: 500;
-  position: relative;
-  top: 0;
-  animation: slide 12s steps(4) infinite;
-}
-@keyframes slide {
-  100%{
-    top: -360px;
-  }
-}
-.dynamic-txts li span{
-  position: relative;
-  margin: 5px 0;
-  line-height: 90px;
-}
-.dynamic-txts li span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
+
+.wrapper .search-input{
+  background: #fff;
   width: 100%;
-  background: #9B04FF;
-  border-left: 2px solid #FC6D6D;
-  animation: typing 3s steps(10) infinite;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
 }
-@keyframes typing {
-  40%, 60%{
-    left: calc(100% + 30px);
-  }
-  100%{
-    left: 0;
-  }
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
 }
 </style>
- <body> 
 <nav>
 <center>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo">RzkyBot</label>
+      <label class="logo">RzkyWeb</label>
       <ul>
         <li><a class="active" href="https://rizky878.github.io">Home</a></li>
         <li><a href="https://chat.whatsapp.com/HJonYuPOQk4DO6bmQ5Naru">Group</a></li>
@@ -89,7 +248,50 @@
       </ul>
       </center>
     </nav>
-    </center>
+      <nav>
+         <div class="logo">
+            Brand
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Feedback</a></li>
+         </ul>
+      </nav>
+      <div class="content">
+         <div>
+            Responsive Navigation Menu Bar Design
+         </div>
+         <div>
+            using only HTML & CSS
+  </div>
+      </div>
+    <div class="clock">
+      <div class="display">
+</div>
+</div><br><br><br><br>
+<script>
+      setInterval(function(){
+        const clock = document.querySelector(".display");
+        let time = new Date();
+ let date = time.toLocaleDateString('id', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+        let sec = time.getSeconds();
+        let min = time.getMinutes();
+        let hr = time.getHours();
+        
+        clock.textContent = `${date}\n ${hr}:${min}:${sec}`;
+      });
+    </script>
   <strong> 
    <center>
     <br>
@@ -133,15 +335,6 @@ var wid = '328457';
 	}
 
 </style> 
-<center>
-<div class="wrapper">
-    <ul style="text-align:center"> class="dynamic-txts">
-      <li><span>Website</span></li>
-      <li><span>Rizky Fadilah</span></li>
-      <li><span>X</span></li>
-      <li><span>Manxtodd</span></li>
-    </ul>
-  </div>
     <script> 
 
 TypingText = function(element, interval, cursor, finishedCallback) {
@@ -316,13 +509,6 @@ this.finishedCallback();
 
 }
 </script>
-      
-  
-    <center>
-     <p id="info"><font face="bold" size="6" font="" style="text-shadow: 0px 0px 30px green;" color="white">ANU TEAM </font> _</p>
-     <center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">Jika Tuhan Berada Dipihakmu<br></font>
-<center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">Percayalah Tak Ada Orang Yang Bisa Menjatuhkanmu<br>
-<center><font face="courier new" size="3" font style="text-shadow: 0px 0px 30px red;" color="white">~ Rizky Fadilah<br><br>
 <center>
       <div id="links">
        <li>
@@ -795,6 +981,8 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
   <div style="color: rgb(255, 255, 255); position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center; vertical-align: baseline; left: 136px; top: -642px;">
    •
   </div>
+<script src="search/js/suggestions.js"></script>
+    <script src="search/js/script.js"></script>
  </body>
  <script type="text/javascript">
 	$.getJSON("https://api.countapi.xyz/hit/rizky878.github.io/", function(data) {
