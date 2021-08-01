@@ -17,7 +17,29 @@
   some/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head> 
+ <style>
+ 
+.rainbow {
+  background: linear-gradient(
+    to right, 
+    #A6CE37, #ECE71C, #0FC6E6, #F95D44, #816271, #9F1958, #081B6A, #59D7EE);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 800px;
+  background-position: center 0%;
+  animation: background-slide 25s infinite linear;
+}
+
+@keyframes background-slide {
+  100% {
+    background-position: 8160px;
+  }
+}
+    
+    </style>
  <body> 
+
 <nav>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -324,7 +346,9 @@ this.finishedCallback();
                           </svg>
                     </a>
                 </div>
-     
+     <footer class="animated fadeIn">
+         &copy; 2021. Rzky.
+      </footer>
       
 </script><br> <script language="JavaScript">
 
