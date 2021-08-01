@@ -141,11 +141,16 @@ html,body{
       setInterval(function(){
         const clock = document.querySelector(".display");
         let time = new Date();
+ let date = time.toLocaleDateString('id', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
         let sec = time.getSeconds();
         let min = time.getMinutes();
         let hr = time.getHours();
         
-        clock.textContent = hr + ':' + min + ':' + sec;
+        clock.textContent = date+'  '+hr + ':' + min + ':' + sec;
       });
     </script>
   <strong> 
