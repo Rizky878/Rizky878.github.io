@@ -136,7 +136,7 @@ html,body{
     <div class="clock">
       <div class="display">
 </div>
-</div><br><br>
+</div><br><br><br><br>
 <script>
       setInterval(function(){
         const clock = document.querySelector(".display");
@@ -150,7 +150,7 @@ html,body{
         let min = time.getMinutes();
         let hr = time.getHours();
         
-        clock.textContent = date+'  '+hr + ':' + min + ':' + sec;
+        clock.textContent = date+'\n'+hr + ':' + min + ':' + sec;
       });
     </script>
   <strong> 
