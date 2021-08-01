@@ -1,4 +1,4 @@
 let suggestions = [
-    "tes",
-    "tes rzky",
+    "Rizky",
+    "Rizky Fadilah",
 ];
