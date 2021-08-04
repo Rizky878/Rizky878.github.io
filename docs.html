@@ -18,18 +18,6 @@
 </head> 
  <body> 
 <script>
-const { value: accept } = await Swal.fire({
-      title: 'Terms and conditions',
-      input: 'checkbox',
-      inputValue: 1,
-      inputPlaceholder:
-        'I agree with the terms and conditions',
-      confirmButtonText:
-        'Continue&nbsp;<i class="fa fa-arrow-right"></i>',
-      inputValidator: (result) => {
-        return !result && 'You need to agree with T&C'
-      }
-    })
 let timerInterval
 Swal.fire({
   title: 'wait a minute Login!',
@@ -48,6 +36,22 @@ Swal.fire({
   }
 }).then(async(result) => {
   /* Read more about handling dismissals below */
+const { value: accept } = await Swal.fire({
+      title: 'Terms and conditions',
+      input: 'checkbox',
+      inputValue: 1,
+      inputPlaceholder:
+        'I agree with the terms and conditions',
+      confirmButtonText:
+        'Continue&nbsp;<i class="fa fa-arrow-right"></i>',
+      inputValidator: (result) => {
+        return !result && 'You need to agree with T&C'
+      }
+    })
+
+    if (accept) {
+      Swal.fire('You agreed with T&C :)')
+    }
   if (result.dismiss === Swal.DismissReason.timer) {
     console.log('I was closed by the timer')
 const Toast = Swal.mixin({
