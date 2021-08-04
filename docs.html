@@ -15,13 +15,13 @@
 </head> 
  <body> 
 <script>
-        var yakin = confirm("ingin berkunjung kesini?");
-
-        if (yakin) {
-document.alert("Baiklah, semoga menikmati web saya");
-        } else {
-            window.location = "https://google.com";
-        }
+        var nama = prompt("Siapa nama kamu?", "");
+if(!nama) {
+var nama = prompt("Nama lu siapa bangsad?", "");
+        document.write("<p>Hello "+ nama +"</p>");
+return
+}
+document.write("<p>Hello "+ nama +"</p>");
     </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
