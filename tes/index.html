@@ -7,130 +7,68 @@
   <meta http-equiv="pragma" content="public"> 
   <link rel="stylesheet" type="text/css" href="https://ia601501.us.archive.org/22/items/animated_201809/animated.css"> 
   <title>RzkyBot</title> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
   <link rel="icon" href="https://telegra.ph/file/0630fcdb51ed0d7d16a2a.jpg" type="image/jpg">
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="st.css">
-  some/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head> 
  <body> 
+<script>
+let timerInterval
+Swal.fire({
+  title: 'wait a minute Login!',
+  html: 'Wait for <b></b> milliseconds.',
+  timer: 5000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then(async(result) => {
+  /* Read more about handling dismissals below */
+const { value: accept } = await Swal.fire({
+      title: 'Terms and conditions',
+      input: 'checkbox',
+      inputValue: 0,
+      inputPlaceholder:
+      'I agree with the terms and conditions',
+      confirmButtonText:
+        'Continue&nbsp;<i class="fa fa-arrow-right"></i>',
+      inputValidator: (result) => {
+        return !result && 'You need to agree with T&C'
+      }
+    })
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+Toast.fire({
+  icon: 'success',
+  title: 'Signed in successfully'
+})
+  }
+})
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-} 
-nav{
-  display: flex;
-  height: 80px;
-  width: 100%;
-  background: #1b1b1b;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px 0 100px;
-  flex-wrap: wrap;
-}
-nav .logo{
-  color: #fff;
-  font-size: 35px;
-  font-weight: 600;
-}
-nav ul{
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-nav ul li{
-  margin: 0 5px;
-}
-nav ul li a{
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-nav ul li a.active,
-nav ul li a:hover{
-  color: #111;
-  background: #fff;
-}
-nav .menu-btn i{
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-}
-input[type="checkbox"]{
-  display: none;
-}
-@media (max-width: 1000px){
-  nav{
-    padding: 0 40px 0 50px;
-  }
-}
-@media (max-width: 920px) {
-  nav .menu-btn i{
-    display: block;
-  }
-  #click:checked ~ .menu-btn i:before{
-    content: "\f00d";
-  }
-  nav ul{
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    background: #111;
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    display: block;
-    transition: all 0.3s ease;
-  }
-  #click:checked ~ ul{
-    left: 0;
-  }
-  nav ul li{
-    width: 100%;
-    margin: 40px 0;
-  }
-  nav ul li a{
-    width: 100%;
-    margin-left: -100%;
-    display: block;
-    font-size: 20px;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  #click:checked ~ ul li a{
-    margin-left: 0px;
-  }
-  nav ul li a.active,
-  nav ul li a:hover{
-    background: none;
-    color: cyan;
-  }
-}
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -1;
-  width: 100%;
-  padding: 0 30px;
-  color: #1b1b1b;
-}
-.content div{
-  font-size: 40px;
-  font-weight: 700;
-}
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
 *{
   margin: 0;
@@ -147,7 +85,7 @@ html,body{
   padding: 0 30px;
 }
 .clock .display{
-  font-size: 60px;
+  font-size: 40px;
   color: cyan;
   letter-spacing: 5px;
   font-family: 'Orbitron', sans-serif;
@@ -157,81 +95,94 @@ html,body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-::selection{
-  color: #fff;
-  background: #664AFF;
+.wrapper .outer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.wrapper{
-  max-width: 450px;
-  margin: 150px auto;
-}
-
-.wrapper .search-input{
+.wrapper .card{
   background: #fff;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-}
-.search-input input{
-  height: 55px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 0 60px 0 20px;
-  font-size: 18px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-}
-
-.search-input.active input{
-  border-radius: 5px 5px 0 0;
-}
-
-.search-input .autocom-box{
-  padding: 0;
+  width: 430px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
   opacity: 0;
   pointer-events: none;
-  max-height: 280px;
-  overflow-y: auto;
-}
-
-.search-input.active .autocom-box{
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.autocom-box li{
-  list-style: none;
-  padding: 8px 12px;
-  display: none;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-}
-
-.search-input.active .autocom-box li{
-  display: block;
-}
-.autocom-box li:hover{
-  background: #efefef;
-}
-
-.search-input .icon{
   position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 55px;
-  width: 55px;
-  text-align: center;
-  line-height: 55px;
-  font-size: 20px;
-  color: #644bff;
-  cursor: pointer;
+  justify-content: space-between;
+  border-radius: 100px 20px 20px 100px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  animation: animate 15s linear infinite;
+  animation-delay: calc(3s * var(--delay));
+}
+.outer:hover .card{
+  animation-play-state: paused;
+}
+.wrapper .card:last-child{
+  animation-delay: calc(-3s * var(--delay));
+}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%, 20%{
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%, 40%{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0%) scale(1);
+  }
+  45%, 60%{
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%, 100%{
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}
+.card .content{
+  display: flex;
+  align-items: center;
+}
+.wrapper .card .img{
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  left: -5px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+.card .img img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .details{
+  margin-left: 80px;
+}
+.details span{
+  font-weight: 600;
+  font-size: 18px;
+}
+.card a{
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 25px;
+  color: #fff;
+  background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+  transition: all 0.3s ease;
+}
+.card a:hover{
+  transform: scale(0.94);
 }
 </style>
 <nav>
@@ -248,30 +199,6 @@ html,body{
       </ul>
       </center>
     </nav>
-      <nav>
-         <div class="logo">
-            Brand
-         </div>
-         <input type="checkbox" id="click">
-         <label for="click" class="menu-btn">
-         <i class="fas fa-bars"></i>
-         </label>
-         <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Feedback</a></li>
-         </ul>
-      </nav>
-      <div class="content">
-         <div>
-            Responsive Navigation Menu Bar Design
-         </div>
-         <div>
-            using only HTML & CSS
-  </div>
-      </div>
     <div class="clock">
       <div class="display">
 </div>
@@ -311,7 +238,59 @@ html,body{
     	<embed src="https://b.top4top.io/m_1824uf5me0.mp3" type="audio/mpeg" autostart="true" loop="true" height="0" width="0">
    </center> 
    <center>
-    
+  <div class="wrapper">
+    <div class="outer">
+      <div class="card" style="--delay:-1;">
+        <div class="content">
+          <div class="img"><img src="#" alt=""></div>
+          <div class="details">
+            <span class="name">Sumit Kapoor</span>
+            <p>Frontend Developer</p>
+          </div>
+        </div>
+        <a href="#">Follow</a>
+      </div>
+      <div class="card" style="--delay:0;">
+        <div class="content">
+          <div class="img"><img src="#" alt=""></div>
+          <div class="details">
+            <span class="name">Andrew Neil</span>
+            <p>YouTuber & Blogger</p>
+          </div>
+        </div>
+        <a href="#">Follow</a>
+      </div>
+      <div class="card" style="--delay:1;">
+        <div class="content">
+          <div class="img"><img src="#" alt=""></div>
+          <div class="details">
+            <span class="name">Jasmine Carter</span>
+            <p>Freelancer & Vlogger</p>
+          </div>
+        </div>
+        <a href="#">Follow</a>
+      </div>
+      <div class="card" style="--delay:2;">
+        <div class="content">
+          <div class="img"><img src="#" alt=""></div>
+          <div class="details">
+            <span class="name">Justin Chung</span>
+            <p>Backend Developer</p>
+          </div>
+        </div>
+        <a href="#">Follow</a>
+      </div>
+      <div class="card" style="--delay:2;">
+        <div class="content">
+          <div class="img"><img src="#" alt=""></div>
+          <div class="details">
+            <span class="name">Adrina Calvo</span>
+            <p>Teacher & Advertiser</p>
+          </div>
+        </div>
+        <a href="#">Follow</a>
+      </div>
+    </div>
       <div class="card animated fadeIn">
          <center><img class="center animated rollIn" style="width:350px;" src="https://telegra.ph/file/6d346a568a1ddd13ce825.png" alt="avatar"></center><br>
          <hr>
@@ -510,6 +489,10 @@ this.finishedCallback();
 }
 </script>
 <center>
+<p id="info"><font face="bold" size="7" font="" style="text-shadow: 0px 0px 30px green;" color="white">ANU TEAM </font> _</p>
+     <center><font face="courier new" size="4" font style="text-shadow: 0px 0px 30px red;" color="white">Jika Tuhan Berada Dipihakmu<br></font>
+<center><font face="courier new" size="4" font style="text-shadow: 0px 0px 30px red;" color="white">Percayalah Tak Ada Orang Yang Bisa Menjatuhkanmu<br></font>
+<center><font face="courier new" size="4" font style="text-shadow: 0px 0px 30px red;" color="white">~ Rizky Fadilah</font>
       <div id="links">
        <li>
         <a href="https://rizky878.github.io/engga">
@@ -530,15 +513,20 @@ this.finishedCallback();
        <button style="background:#007BFF;vertical-align:center;width:1000px;height:56px;border-radius:20px"<p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px black;" color="white">REST API</font>_</p></button></a><br><br>
        <a href="https://rizky878.github.io/engga/bar">
         <button style="background:#007BFF;vertical-align:center;width:1000px;height:56px;border-radius:20px"<p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px black;" color="white">BAR PROGRESS </font>_</p></button></a><br><br>
+<a href="https://rizky878.github.io/chess">
+<button style="background:#007BFF;vertical-align:center;width:1000px;height:56px;border-radius:20px"<p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px black;" color="white">CATUR GAME </font>_</p></button></a><br><br>
 <a href="https://rizky878.github.io/ular">
         <button style="background:#007BFF;vertical-align:center;width:1000px;height:56px;border-radius:20px"<p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px black;" color="white">MINESWEEPER GAME </font>_</p></button></a><br><br>
       	<a href="https://wa.me/6282387804410?text=hai+bang">
         <button style="background:#007BFF;vertical-align:center;width:1000px;height:56px;border-radius:20px"<p id="info"><font face="monaco" size="5" font="" style="text-shadow: 0px 0px 30px black;" color="white">DEVELOPER </font>_</p></button></a><br><br>
-  
     </div>
-    <center><h1 id="visitorJarWEB"></h1><br>
-    	<br>
-<br>
+<div class="clock">
+
+      <div class="display">
+
+</div>
+
+</div>
     <div class="d-flex justify-content-center sosmed">
                     <a class="mx-4" href="https://facebook.com/RizkyFadilah88?refid=46&__xts__%5B0%5D=12.AboW3p4E0-PoPv3ZtS2vM_9XB2zs3ZJoMaAjLHQHsOV8o7FeE40_VEZ1wOU4zZ88LvYEh_-fUMgazEH8RoqlzIlCBo0-JdfWckapS9je_amwvn-LFNzgDzIDCbea2wuIgc37CZaR37lBlY049_-Ulvz64WpiLAN3zi9YfP0APo-128gaW-Mu3mN-UhfIVA0lMDM87_iXxvVDjgM2wIVgdnfIObS7t8BnDkcAeORmRlVcTLVt7qDxcun8g-YPM9MmEVOjWnQjxLrJ2L1lisbhmwka-KEqmHBFxbCCcA7wmMVoJGhtRlwXV5vYzGffyQp2nraAOY3OFaJwqYqqPHfhMp1PJf8clQIKWqavf0te114RTDm2kEQ8K49sIt0j_Mx3JngtACp1bqEzMYi6JBCVWwGjnKAlx5-1llGd8X1Hl7bouInyHo5Y9gSmOOIfrvX4O7LGUDrfgqTZIA0NwavCZm3c-l5utTYGhjmv2Yo2er8fHQ4YWGvpFVvi3vZtNed1oQrKX8mW5J3GnO9ZM1ABs29gt7hPLERKcyin2Moy2gQFe_oPmaNh7WJFAkrxWucJ8IE" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
