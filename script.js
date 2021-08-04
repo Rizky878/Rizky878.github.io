@@ -28,9 +28,8 @@ checkBtn.addEventListener("click", e =>{
   let inputVal = inputField.value.split('').join(' ');
   if(inputVal == captcha.innerText){ //if captcha matched
     statusTxt.style.color = "#4db2ec";
-    statusTxt.innerText = 'benar'
+    statusTxt.innerText = document.split('\n')
     setTimeout(()=>{
-window.location = 'https://google.com'
       removeContent();
       getCaptcha();
     }, 2000);
