@@ -28,7 +28,7 @@ checkBtn.addEventListener("click", e =>{
   let inputVal = inputField.value.split('').join(' ');
   if(inputVal == captcha.innerText){ //if captcha matched
     statusTxt.style.color = "#4db2ec";
-    window.location = "docs";
+    statusTxt.innerHTML = "<script>alert('I am John in an annoying alert!')</script>";
     setTimeout(()=>{
       removeContent();
       getCaptcha();
