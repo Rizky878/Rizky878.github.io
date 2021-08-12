@@ -1,4 +1,4 @@
-### ngapa bang? owh mau copy ok
+### Web Gratis
 
 ## Thanks To
 * [`Dave`](https://github.com/noizydev)
@@ -9,4 +9,5 @@
 
 
 ## Developer
+* [`Rizky`](https://wa.me/6282387804410)
 * [`Rizky`](https://github.com/rizky878)
