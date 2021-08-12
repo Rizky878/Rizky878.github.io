@@ -16,7 +16,57 @@
       <meta name="author" content="Rizky878">
       <meta name="robots" content="index, follow" />
    </head>
-   
+   <script>
+let timerInterval
+Swal.fire({
+  title: 'wait a minute Login!',
+  html: 'Wait for <b></b> milliseconds.',
+  timer: 5000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then(async(result) => {
+  /* Read more about handling dismissals below */
+const { value: accept } = await Swal.fire({
+      title: 'Terms and conditions',
+      input: 'checkbox',
+      inputValue: 0,
+      inputPlaceholder:
+      'I agree with the terms and conditions',
+      confirmButtonText:
+        'Continue&nbsp;<i class="fa fa-arrow-right"></i>',
+      inputValidator: (result) => {
+        return !result && 'You need to agree with T&C'
+      }
+    })
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+Toast.fire({
+  icon: 'success',
+  title: 'Signed in successfully'
+})
+  }
+})
+</script>
    <style>
  
 .rainbow {
