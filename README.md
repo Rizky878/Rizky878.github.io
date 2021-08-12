@@ -9,5 +9,5 @@
 
 
 ## Developer
-* [`Rizky`](https://wa.me/6282387804410)
+* [`Rizky WhatsApp`](https://wa.me/6282387804410)
 * [`Rizky`](https://github.com/rizky878)
