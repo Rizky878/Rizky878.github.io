@@ -9,4 +9,4 @@
 
 
 ## Developer
-*[`Rizky`](https://github.com/rizky878)
+* [`Rizky`](https://github.com/rizky878)
