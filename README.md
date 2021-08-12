@@ -6,3 +6,7 @@
 * [`Manxtodd`](https://github.com/manxtodd)
 [`Aqul`](https://github.com/zennn08)
 * [`Rein Fernhout`](https://reinfernhout.xyz)
+
+
+## Developer
+*[`Rizky`](https://github.com/rizky878)
