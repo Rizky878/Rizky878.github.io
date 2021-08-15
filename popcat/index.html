@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <title>Pop Cat</title>
-    <link rel="manifest" href="popcat/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="description" content="Ini adalah Situs Web sederhana yang saya buat/Rizky ,memunculkan pop cat di ponsel atau desktop Anda.">
     <meta name='viewport'
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0,
@@ -9,14 +9,14 @@
 
     <meta property="og:title" content="Pop Cat || RizkyFdlh" />
     <meta property="og:description" content="Ini adalah Situs Web sederhana yang saya buat/Rizky ,memunculkan pop cat di ponsel atau desktop Anda." />
-    <meta property="og:image" content="popcat/resources/close.png" />
+    <meta property="og:image" content="resources/close.png" />
 
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="index" />
     <meta name="twitter:title" content="Pop Cat || Rizky Fdlh" />
     <meta name="twitter:description" content="Ini adalah Situs Web sederhana yang saya buat/Rizky ,memunculkan pop cat di ponsel atau desktop Anda." />
-    <meta name="twitter:image" content="popcat/resources/close.png" />
+    <meta name="twitter:image" content="resources/close.png" />
 
     <style>
         * {
@@ -73,7 +73,7 @@
 
 </head>
 <body>
-<img id="cat" src="popcat/resources/close.png" alt="Closed cat">
+<img id="cat" src="resources/close.png" alt="Closed cat">
 <div id="links">
     <a target="_blank" href="https://popcat.click/">Pop Cat resmi</a>
     <a target="_blank" href="https://wa.me/6282387804410">Pemilik</a>
@@ -83,7 +83,7 @@
 
 
 <script>
-    let audio = new Audio('popcat/resources/sound.mp3');
+    let audio = new Audio('resources/sound.mp3');
     let div = document.getElementById('cat')
 
     let timerId;
@@ -129,9 +129,9 @@
 
 
         audio.play();
-        div.src = 'popcat/resources/open.png'
+        div.src = 'resources/open.png'
         setTimeout(() => {
-            div.src = 'popcat/resources/close.png'
+            div.src = 'resources/close.png'
         }, 100)
 
 
