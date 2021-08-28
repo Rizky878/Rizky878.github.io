@@ -1,6 +1,5 @@
 
-var router = require('express').Router(),    
-{ checkApiKey } = require('./')       
+var router = require('express').Router(),
 const cheerio = require('cheerio')
 const axios = require('axios')
 
