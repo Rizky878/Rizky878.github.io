@@ -28,14 +28,15 @@ checkBtn.addEventListener("click", e =>{
   let inputVal = inputField.value.split('').join(' ');
   if(inputVal == captcha.innerText){ //if captcha matched
     statusTxt.style.color = "#4db2ec";
-    statusTxt.innerHTML = ""
-    setTimeout(()=>{
-      removeContent();
-      getCaptcha();
-    }, 2000);
+    statusTxt.innerHTML = '';
+    
   }else{
     statusTxt.style.color = "#ff0000";
     statusTxt.innerText = "Captcha tidak cocok. Silakan coba lagi!";
+setTimeout(()=>{
+      removeContent();
+      getCaptcha();
+    }, 2000);
   }
 });
 
