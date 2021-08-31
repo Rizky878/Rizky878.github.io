@@ -28,7 +28,7 @@ checkBtn.addEventListener("click", e =>{
   let inputVal = inputField.value.split('').join(' ');
   if(inputVal == captcha.innerText){ //if captcha matched
     statusTxt.style.color = "#4db2ec";
-    statusTxt.innerHTML = '';
+    statusTxt.href = 'docs';
     
   }else{
     statusTxt.style.color = "#ff0000";
