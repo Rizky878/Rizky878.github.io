@@ -110,6 +110,11 @@
       header.classList.toggle("sticky", window.scrollY > 0);
     });
     </script>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
 </script>
 <script src="https://storage.jarxr.xyz/ip.js"></script>
 <script async src="https://api.countapi.xyz/hit/rizkyfadilahh.github.io/visits?callback=cb"></script>
