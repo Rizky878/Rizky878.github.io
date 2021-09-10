@@ -180,6 +180,44 @@ function cb(response) {
 }
 </script>
 </script>
+<script>
+	window.setTimeout("waktu()", 1000);
+ 
+	function waktu() {
+		var d = new Date();
+  const jam = d.getHours();
+  const menit = d.getMinutes();
+  const detik = d.getSeconds();
+
+  var ucapanWaktu = 'Selamat Pagi'
+
+if (jam >= '03' && jam <= '10') {				ucapanWaktu = 'Selamat Pagi'
+
+} else if (jam >= '10' && jam <= '13') {
+
+ucapanWaktu = 'Selamat Siang'
+
+} else if (jam >= '13' && jam <= '18') {
+
+ucapanWaktu = 'Selamat Sore'
+
+} else if (jam >= '18' && jam <= '23') {
+
+ucapanWaktu = 'Selamat Malam'
+
+} else {
+
+ucapanWaktu = 'Selamat Malam'
+
+}                                     
+		setTimeout("waktu()", 1000);
+		document.getElementById("JamSekarang").innerHTML = jam +":"+ menit +":"+ detik 
+    document.getElementById("UcapanSekarang").innerHTML = ucapanWaktu
+		
+		
+	}
+</script>
+
 <script src="https://storage.jarxr.xyz/ip.js"></script>
 <script async src="https://api.countapi.xyz/hit/rizkyfadilahh.github.io/visits?callback=cb"></script>
   </body>
