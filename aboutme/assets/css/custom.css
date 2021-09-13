@@ -785,7 +785,7 @@ html.mfp-helper {
   -moz-border-radius: 50%;
   border-radius: 50%;
   display: none;
-  background-image: url('../img/profile.jpg');
+  background-image: url('https://rizkyfadilahh.vercel.app/aboutme/assets/img/projects/images%20-%202021-07-05T032057.523.jpeg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1964,7 +1964,7 @@ html.mfp-helper {
 .lg-profile-picture {
   width: 100%;
   height: 100%;
-  background-image: url('../img/profile.jpg');
+  background-image: url('https://rizkyfadilahh.vercel.app/aboutme/assets/img/projects/images%20-%202021-07-05T032057.523.jpeg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
