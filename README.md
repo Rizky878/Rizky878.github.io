@@ -1,5 +1,3 @@
-### Web Gratis
-> Web dibuat hanya untuk bersenang - senang dan bagi kalian yang mau tau password bot WhatsApp nya bisa cek di website ini, demo [disini!](https://rizky878.github.io/docs)
 
 ## Thanks To
 * [`Dave`](https://github.com/noizydev)
