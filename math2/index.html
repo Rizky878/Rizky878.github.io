@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<script src="./js/jquery-3.5.1.slim.min.js"></script>
@@ -250,8 +251,8 @@
 		active = true;
 		answer = getRandomInt(0, 9); // Always have Answer of 0-9
 		var parenthesis = Math.random() >= 0.5; // Random Boolean
-		num1 = getRandomInt(0, 25);
-		num2 = getRandomInt(0, 25);
+		num1 = getRandomInt(0, 30);
+		num2 = getRandomInt(0, 30);
 		var tempNum;
 		if (num1 < num2) { // First Number is always bigger
 			temp = num1;
